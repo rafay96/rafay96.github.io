@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie-edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+  crossorigin="anonymous">
+
+  <style>
+    body{
+  margin-top:70px;
+  background:#333;
+  color:#fff;
+  }
+  </style>
+
+  <title>Weight Converter</title>
+
+</head>
+<body>
+
+  <nav>
+    <a href= "index.html">Weight</a>
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    <a href= "height.html">Height</a>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h1 class="display-4 text-center mb-3">Height Converter</h1>
+        <form>
+          <div class="form-group">
+            <input id="hInput" type="number" class="form-control form-control-lg"
+            placeholder="Enter Feet:">
+          </div>
+        </form>
+        <div id="output">
+          <div class="card bg-primary mb-2">
+            <div class="card-block">
+              <h4>Inches:</h4>
+              <div id="inchesOutput"></div>
+            </div>
+          </div>
+
+          <div class="card bg-success mb-2">
+            <div class="card-block">
+              <h4>Meter:</h4>
+              <div id="meterOutput"></div>
+            </div>
+          </div>
+
+          <div class="card bg-danger mb-2">
+            <div class="card-block">
+              <h4>Centimeter:</h4>
+              <div id="cmOutput"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("output").style.visibility = "hidden";
+    document.getElementById("hInput").addEventListener("input", function(e) {
+    document.getElementById("output").style.visibility = "visible";
+    let feet = e.target.value;
+    document.getElementById("inchesOutput").innerHTML = feet * 12;
+    document.getElementById("meterOutput").innerHTML = feet / 3.281;
+    document.getElementById("cmOutput").innerHTML = feet / .03281;
+  });
+  </script>
+
+</body>
+</html>
